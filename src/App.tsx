@@ -1,13 +1,11 @@
 import './App.css'
-import Navbar from './components/layout/navbar'
-
+import Navbar from './components/layout/navbar';
+import Hero from './components/sections/Hero';
 function App() {
     return (
       <>
       <Navbar/>
-      <main className='pt-16'>
-        <div>my portfolio</div>
-      </main>
+      <Hero/>
       </>
     )
 }

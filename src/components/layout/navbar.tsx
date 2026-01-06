@@ -2,11 +2,11 @@ import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const navItems = [
-    { label: "Home", id: "home" },
-    { label: "About Me", id:"about" },
-    { label: "Projects", id: "project" },
-    { label: "Skills", id: "skills" },
-    { label: "Contact", id: "contact" },
+    { label: "Home", id: "Hero" },
+    { label: "About Me", id:"About" },
+    { label: "Projects", id: "Project" },
+    { label: "Skills", id: "Skills" },
+    { label: "Contact", id: "Contact" },
   ];
 
   const handleScroll = (id: string) => {

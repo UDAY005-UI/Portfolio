@@ -5,7 +5,7 @@ import star from "../../assets/star.png";
 
 export default function About() {
   return (
-    <section className="h-screen w-full pt-20">
+    <section className="h-screen w-full pt-30">
       <div className="relative grid h-full grid-cols-3">
         <div className="relative flex flex-col gap-3">
           <h1 className="text-left text-6xl">About Me</h1>

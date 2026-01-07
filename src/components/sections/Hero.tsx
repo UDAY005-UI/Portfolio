@@ -10,7 +10,7 @@ export default function Home() {
         <img
           src={web}
           alt=""
-          className="absolute top-32 -left-22 opacity-100"
+          className="absolute h-[70vh] top-31 -left-22 opacity-100"
         />
 
         {/* Content */}
@@ -36,7 +36,7 @@ export default function Home() {
             <h1 className="text-[13rem] font-light leading-[0.9] tracking-tighter">
               Hello
             </h1>
-            <p className="-mt-8 text-xl text-gray-400">
+            <p className="-translate-y-4 text-xl text-gray-400">
               — Designing and developing the web
             </p>
           </div>

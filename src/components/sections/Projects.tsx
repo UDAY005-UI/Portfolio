@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <div className="w-full pt-30">
+    <section id="Projects" className="w-full pt-30">
       <div className="relative flex flex-col items-center justify-center gap-6">
         <div className="grid grid-cols-2 justify-between gap-30">
           <div className="flex flex-col items-start gap-2">
@@ -79,6 +79,6 @@ export default function Projects() {
         </div>
         <div className="w-full h-px bg-[#e6e6e6]"></div>
       </div>
-    </div>
+    </section>
   );
 }

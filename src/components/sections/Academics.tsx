@@ -2,7 +2,7 @@ import hat from "../../assets/hat.png";
 
 export default function Academics() {
   return (
-    <div className="relative h-auto w-full pt-30">
+    <section id="Academics" className="relative h-auto w-full pt-30">
       <div className="flex h-[40vh] items-center justify-between gap-20 rounded-2xl bg-[#f1f0f0] px-5 py-5">
         <div className="flex flex-col gap-2 text-left">
           <p className="text-xl">⌀ Explore</p>
@@ -21,6 +21,6 @@ export default function Academics() {
             className="h-[35vh] w-[30vw] rounded-2xl opacity-86"
           />
       </div>
-    </div>
+    </section>
   );
 }

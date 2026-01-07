@@ -3,19 +3,14 @@ import web from "../../assets/web.png";
 
 export default function Home() {
   return (
-    <section className="w-full">
-      <div className="relative min-h-screen w-full grid grid-cols-[1fr_2fr_2fr] px-10 lg:px-24">
-
-        {/* Decorative left image */}
+    <section id="Hero" className="w-full">
+      <div className="relative grid min-h-screen w-full grid-cols-[1fr_2fr_2fr] px-10 lg:px-24">
         <img
           src={web}
           alt=""
-          className="absolute h-[70vh] top-31 -left-22 opacity-100"
+          className="absolute top-31 -left-22 h-[70vh] opacity-100"
         />
-
-        {/* Content */}
         <div className="relative z-10 flex flex-col pt-32">
-          
           <div className="flex gap-24">
             <div>
               <h2 className="text-3xl font-medium">Clean</h2>
@@ -33,7 +28,7 @@ export default function Home() {
           </div>
 
           <div className="mt-20">
-            <h1 className="text-[13rem] font-light leading-[0.9] tracking-tighter">
+            <h1 className="text-[13rem] leading-[0.9] font-light tracking-tighter">
               Hello
             </h1>
             <p className="-translate-y-4 text-xl text-gray-400">
@@ -48,11 +43,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right portrait */}
         <img
           src={uday}
           alt=""
-          className="absolute bottom-0 right-0 h-[90vh] w-auto max-w-none opacity-90"
+          className="absolute right-0 bottom-0 h-[90vh] w-auto max-w-none opacity-90"
         />
       </div>
     </section>

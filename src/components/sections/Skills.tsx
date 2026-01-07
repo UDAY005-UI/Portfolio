@@ -2,7 +2,7 @@ import uday from "../../assets/uday6.jpg";
 
 export default function Skills() {
   return (
-    <div className="relative h-screen w-full pt-30">
+    <div id="Skills" className="relative mt-30 h-auto w-full">
       <div className="flex flex-col gap-25">
         <div className="flex h-[40vh] items-start justify-between gap-20 rounded-2xl bg-[#f1f0f0] px-5 py-5">
           <div className="flex flex-col gap-2 text-left">

@@ -4,7 +4,7 @@ import github from "../../assets/github.png";
 
 export default function Contact() {
   return (
-    <div className="relative h-auto w-full py-30">
+    <section id="Contact" className="relative h-auto w-full py-30">
       <div className="flex-flex-col">
         <div className="flex flex-col gap-3">
           <h1 className="text-6xl">Interested in building together?</h1>
@@ -42,6 +42,6 @@ export default function Contact() {
                 </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

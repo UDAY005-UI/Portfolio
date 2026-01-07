@@ -25,21 +25,18 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", id: "Hero" },
     { label: "About Me", id:"About" },
-    { label: "Projects", id: "Project" },
     { label: "Skills", id: "Skills" },
+    { label: "Projects", id: "Projects" },  
+    { label: "Academics", id: "Academics" },
     { label: "Contact", id: "Contact" },
   ];
 
-  const handleScroll = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const NAVBAR_HEIGHT = 80
-      const yOffset = -NAVBAR_HEIGHT;
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
+const handleScrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  section.scrollIntoView({ behavior: "smooth" });
+};
 
   return (
     <nav className={`fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md transition-transform duration-700 ease-in-out ${show ? "trasnlate-y-0" : "-translate-y-full"}`}>
@@ -50,13 +47,14 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li key={item.id}>
               <button
-                onClick={() => handleScroll(item.id)}
-                className="text-[#222222] transition-all duration-300 hover:text-blue-600"
+                onClick={() => handleScrollToSection(item.id)}
+                className="text-[#222222]"
               >
                 {item.label}
               </button>
             </li>
           ))}
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         </ul>
       </div>
     </nav>

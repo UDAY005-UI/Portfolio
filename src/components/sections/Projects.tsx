@@ -34,14 +34,14 @@ export default function Projects() {
             <a 
             href="https://github.com/UDAY005-UI/SAAS"
             target="_blank"
-            rel="noopener onrefferer" 
+            rel="noopener noreferrer" 
             className="rounded-3xl border border-[#7B7B7B] bg-[#e6e6e6] px-3 py-1 text-lg text-black no-underline hover:text-[#7B7B7B] visited:text-black focus:text-black">
               GitHub
             </a>
             <a
               href="https://saas-web-nine.vercel.app/"
               target="_blank"
-              rel="noopener norefferer"
+              rel="noopener noreferrer"
               className="rounded-3xl border border-[#7B7B7B] bg-[#e6e6e6] px-3 py-1 text-lg text-black no-underline visited:text-black hover:text-[#7B7B7B] focus:text-black"
             >
               Visit Site
@@ -63,14 +63,14 @@ export default function Projects() {
             <a 
             href="https://github.com/UDAY005-UI/Portfolio"
             target="_blank"
-            rel="noopener onrefferer" 
+            rel="noopener noreferrer" 
             className="rounded-3xl border border-[#7B7B7B] bg-[#e6e6e6] px-3 py-1 text-lg text-black no-underline hover:text-[#7B7B7B] visited:text-black focus:text-black">
               GitHub
             </a>
             <a
               href="https://saas-web-nine.vercel.app/"
               target="_blank"
-              rel="noopener norefferer"
+              rel="noopener noreferrer"
               className="rounded-3xl border border-[#7B7B7B] bg-[#e6e6e6] px-3 py-1 text-lg text-black no-underline visited:text-black hover:text-[#7B7B7B] focus:text-black"
             >
               Visit Site

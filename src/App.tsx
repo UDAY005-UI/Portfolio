@@ -12,7 +12,7 @@ function App() {
     return (
       <>
       <Navbar/> 
-      <div className='flex flex-col'>
+      <div className='overflow-x-hidden flex flex-col'>
       <Hero/>
       <About/>
       <Skills/>

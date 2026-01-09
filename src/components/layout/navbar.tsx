@@ -4,46 +4,61 @@ import logo from "../../assets/logo.png";
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if(currentScrollY < lastScrollY || currentScrollY < 50) {
+      if (currentScrollY < lastScrollY || currentScrollY < 50) {
         setShow(true);
       } else {
         setShow(false);
+        setMenuOpen(false);
       }
 
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true});
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   const navItems = [
     { label: "Home", id: "Hero" },
-    { label: "About Me", id:"About" },
+    { label: "About Me", id: "About" },
     { label: "Skills", id: "Skills" },
-    { label: "Projects", id: "Projects" },  
+    { label: "Projects", id: "Projects" },
     { label: "Academics", id: "Academics" },
     { label: "Contact", id: "Contact" },
   ];
 
-const handleScrollToSection = (id: string) => {
-  const section = document.getElementById(id);
-  if (!section) return;
-
-  section.scrollIntoView({ behavior: "smooth" });
-};
+  const handleScrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+    section.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md transition-transform duration-700 ease-in-out ${show ? "trasnlate-y-0" : "-translate-y-full"}`}>
-      <div className="mx-auto flex h-20 items-center justify-start">
-        <img src={logo} alt="Logo" className="ml-20 -translate-y-2 h-8 w-auto object-contain" />
+    <nav
+      className={`
+        fixed top-0 left-0 z-50 w-full px-5
+        bg-white/80 backdrop-blur-md
+        transition-transform duration-700 ease-in-out
+        ${show ? "translate-y-0" : "-translate-y-full"}
+      `}
+    >
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-start px-6 lg:px-12">
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-8 w-auto object-contain lg:-translate-x-12"
+        />
 
-        <ul className="flex gap-12 text-lg pl-10">
+        {/* Desktop / Tablet Menu */}
+        <ul className="hidden md:flex items-center gap-6 lg:gap-12 text-md lg:text-lg">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -54,7 +69,54 @@ const handleScrollToSection = (id: string) => {
               </button>
             </li>
           ))}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#222222]"
+          >
+            Resume
+          </a>
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-xl"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`
+          md:hidden
+          overflow-hidden
+          transition-all duration-500 ease-in-out
+          ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <ul className="flex flex-col gap-6 px-6 pb-6 pt-4 text-base">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => handleScrollToSection(item.id)}
+                className="text-[#222222]"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#222222]"
+          >
+            Resume
+          </a>
         </ul>
       </div>
     </nav>

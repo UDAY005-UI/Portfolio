@@ -3,51 +3,101 @@ import web from "../../assets/web.png";
 
 export default function Home() {
   return (
-    <section id="Hero" className="w-full">
-      <div className="relative grid min-h-screen w-full grid-cols-[1fr_2fr_2fr] px-10 lg:px-24">
+    <section id="Hero" className="relative w-full overflow-x-hidden">
+      <div
+        className="
+          relative
+          min-h-screen
+          w-full
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          lg:grid-cols-[1fr_2fr_2fr]
+
+          px-6
+          md:px-12
+          lg:px-0
+          lg:pl-[6vw]
+        "
+      >
+        {/* Decorative Background Image (lg only) */}
         <img
           src={web}
           alt=""
-          className="absolute top-31 -left-22 h-[70vh] opacity-100"
+          className="
+            pointer-events-none
+            absolute
+            top-30
+            left-0
+            hidden
+            lg:block
+            h-[65vh]
+            opacity-80
+            -translate-x-11
+          "
         />
-        <div className="relative z-10 flex flex-col pt-32">
-          <div className="flex gap-24">
+
+        {/* TEXT CONTENT */}
+        <div className="relative z-10 flex flex-col pt-24 md:pt-32 lg:translate-x-10">
+          <div className="flex flex-col gap-6 md:flex-row md:gap-16">
             <div>
-              <h2 className="text-3xl font-medium">Clean</h2>
-              <p className="text-sm leading-relaxed text-gray-500">
+              <h2 className="text-xl font-medium md:text-3xl">Clean</h2>
+              <p className="text-sm leading-relaxed text-gray-500 lg:pl-4">
                 Production-Ready Code
               </p>
             </div>
 
             <div>
-              <h2 className="text-3xl font-medium">Modern</h2>
-              <p className="text-sm leading-relaxed text-gray-500">
+              <h2 className="text-xl font-medium md:text-3xl">Modern</h2>
+              <p className="text-sm leading-relaxed text-gray-500 lg:pl-3">
                 Web Stack Development
               </p>
             </div>
           </div>
 
-          <div className="mt-20">
-            <h1 className="text-[13rem] leading-[0.9] font-light tracking-tighter">
+          <div className="mt-16 md:mt-20">
+            <h1
+              className="
+                font-light
+                tracking-tighter
+                leading-[0.9]
+                text-[4.5rem]
+                sm:text-[6rem]
+                md:text-[9rem]
+                lg:text-[13rem]
+              "
+            >
               Hello
             </h1>
-            <p className="-translate-y-4 text-xl text-gray-400">
+
+            <p className="mt-2 text-base text-gray-400 md:text-xl">
               — Designing and developing the web
             </p>
           </div>
 
-          <div className="mt-28">
-            <p className="flex items-center gap-3 text-sm font-semibold tracking-[0.35em] uppercase">
+          <div className="mt-20 hidden md:block">
+            <p className="flex items-center gap-3 text-sm font-semibold tracking-[0.35em] uppercase lg:pl-3">
               Scroll down ↓
             </p>
           </div>
         </div>
 
-        <img
-          src={uday}
-          alt=""
-          className="absolute right-0 bottom-0 h-[90vh] w-auto max-w-none opacity-90"
-        />
+        {/* PROFILE IMAGE */}
+        <div className="relative flex items-end justify-center md:justify-end lg:translate-x-20">
+          <img
+            src={uday}
+            alt=""
+            className="
+              h-[45vh]
+              md:h-[65vh]
+              lg:h-[90vh]
+              w-auto
+              max-w-full
+              lg:max-w-none
+              opacity-90
+            "
+          />
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import logo from "../../assets/logo.png";
 
@@ -16,8 +16,6 @@ export default function Navbar() {
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-  
-    const distance = 15; 
     
     mouseX.set((e.clientX - centerX) / 2.5); 
     mouseY.set((e.clientY - centerY) / 2.5);

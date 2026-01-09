@@ -1,9 +1,32 @@
+import { motion, type Variants } from "framer-motion";
 import hat from "../../assets/hat.png";
 
 export default function Academics() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <section id="Academics" className="relative h-auto w-full pt-30 px-5 lg:px-0 overflow-x-hidden">
-      <div
+    <section id="Academics" className="relative h-auto w-full pt-30 px-5 lg:px-0 overflow-clip">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         className="
           relative
           flex
@@ -14,7 +37,6 @@ export default function Academics() {
           bg-[#f1f0f0]
           px-5
           py-6
-
           md:gap-8
           lg:flex-row
           lg:items-center
@@ -27,60 +49,62 @@ export default function Academics() {
           className="
             flex
             flex-col
+            flex-1
             items-center
             text-center
             gap-2
-
             lg:items-start
             lg:text-left
           "
         >
-          <p className="text-xl">⌀ Explore</p>
-          <h1 className="text-4xl font-semibold">My Academics ~</h1>
-          <p className="text-xl font-semibold">
+          <motion.p variants={itemVariants} className="text-xl">⌀ Explore</motion.p>
+          <motion.h1 variants={itemVariants} className="text-4xl font-semibold">My Academics ~</motion.h1>
+          <motion.p variants={itemVariants} className="text-xl font-semibold">
             Meghnad Saha Institute of Technology
-          </p>
-          <p className="text-lg text-[#7B7B7B]">
+          </motion.p>
+          <motion.p variants={itemVariants} className="text-lg text-[#7B7B7B]">
             Bachelor of Engineering in Computer Science & Technology
-          </p>
-          <p className="text-lg text-[#7B7B7B]">
+          </motion.p>
+          <motion.p variants={itemVariants} className="text-lg text-[#7B7B7B]">
             August 2023 - Expected June 2027
-          </p>
-          <p className="text-lg text-[#7B7B7B]">
+          </motion.p>
+          <motion.p variants={itemVariants} className="text-lg text-[#7B7B7B]">
             CGPA: 7.68 (current)
-          </p>
+          </motion.p>
         </div>
-        <img
+
+        <motion.img
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 0.86, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           src={hat}
           alt="hat"
           className="
             w-full
-            
             rounded-2xl
-            opacity-86
-
             md:max-w-md
-
             lg:h-[35vh]
             lg:w-[30vw]
           "
         />
-        <p
+
+        <motion.p
+          initial={{ opacity: 0, rotate: -90, x: 20 }}
+          whileInView={{ opacity: 0.5, rotate: -90, x: -5 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
           className="
             hidden
             lg:block
             absolute
             lg:translate-x-120
             text-sm
-            text-[#222222]/50
-            -rotate-90
+            text-[#222222]
             [word-spacing:0.4rem]
-            -translate-x-5
           "
         >
           LEARNING BY BUILDING
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </section>
   );
 }

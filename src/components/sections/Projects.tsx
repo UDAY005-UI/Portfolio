@@ -1,11 +1,28 @@
+import { motion, type Variants } from "framer-motion";
+
 export default function Projects() {
+  const rowVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    },
+  };
+
   return (
     <section
       id="Projects"
-      className="w-full overflow-x-hidden px-5 pt-30 lg:px-0"
+      className="w-full overflow-clip px-5 pt-30 lg:px-0"
     >
       <div className="relative flex flex-col gap-10">
-        <div className="grid grid-cols-1 items-center gap-10 text-center lg:grid-cols-2 lg:gap-30 lg:text-left">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={rowVariants}
+          className="grid grid-cols-1 items-center gap-10 text-center lg:grid-cols-2 lg:gap-30 lg:text-left"
+        >
           <div className="flex flex-col items-center gap-2 lg:items-start">
             <p className="text-xl">⌀ Experiences</p>
             <h1 className="text-4xl font-semibold">Explore My</h1>
@@ -22,8 +39,14 @@ export default function Projects() {
             improve my frontend skills while focusing on building reliable and
             well-structured backend-driven applications.
           </div>
-        </div>
-        <div className="grid grid-cols-1 items-center gap-6 pt-15 text-center lg:grid-cols-3 lg:gap-25 lg:text-left">
+        </motion.div>
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={rowVariants}
+          className="grid grid-cols-1 items-center gap-6 pt-15 text-center lg:grid-cols-3 lg:gap-25 lg:text-left"
+        >
           <div>
             <h1 className="text-2xl">Course Platform</h1>
             <p className="text-lg text-[#7B7B7B]">
@@ -55,10 +78,17 @@ export default function Projects() {
               Visit Site
             </a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="h-px w-full bg-[#e6e6e6]" />
-        <div className="grid grid-cols-1 items-center gap-6 text-center lg:grid-cols-3 lg:gap-25 lg:text-left">
+
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={rowVariants}
+          className="grid grid-cols-1 items-center gap-6 text-center lg:grid-cols-3 lg:gap-25 lg:text-left"
+        >
           <div>
             <h1 className="text-2xl">Personal Portfolio Website</h1>
             <p className="text-lg text-[#7B7B7B]">
@@ -89,7 +119,7 @@ export default function Projects() {
               Visit Site
             </a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="h-px w-full bg-[#e6e6e6]" />
       </div>

@@ -3,7 +3,6 @@ import hat from "../../assets/hat.png";
 export default function Academics() {
   return (
     <section id="Academics" className="relative h-auto w-full pt-30 px-5 lg:px-0 overflow-x-hidden">
-      {/* CARD */}
       <div
         className="
           relative
@@ -24,7 +23,6 @@ export default function Academics() {
           lg:h-[40vh]
         "
       >
-        {/* TEXT BLOCK */}
         <div
           className="
             flex
@@ -52,8 +50,6 @@ export default function Academics() {
             CGPA: 7.68 (current)
           </p>
         </div>
-
-        {/* IMAGE */}
         <img
           src={hat}
           alt="hat"
@@ -69,8 +65,6 @@ export default function Academics() {
             lg:w-[30vw]
           "
         />
-
-        {/* ROTATED TEXT — DESKTOP ONLY */}
         <p
           className="
             hidden

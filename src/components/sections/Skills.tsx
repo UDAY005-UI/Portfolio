@@ -14,7 +14,6 @@ export default function Skills() {
           lg:px-0
         "
       >
-        {/* TOP BOX */}
         <div
           className="
             flex
@@ -30,7 +29,6 @@ export default function Skills() {
             md:justify-between
           "
         >
-          {/* TEXT */}
           <div className="flex flex-col gap-3 text-left md:w-1/2">
             <p className="text- lg:text-xl">⌀ Explore</p>
             <h1 className="text-3xl lg:text-4xl font-semibold">
@@ -46,8 +44,6 @@ export default function Skills() {
               Do I know everything yet? Not even close—but I’m getting there.
             </p>
           </div>
-
-          {/* IMAGE */}
           <img
             src={uday}
             alt="uday"
@@ -65,8 +61,6 @@ export default function Skills() {
             "
           />
         </div>
-
-        {/* SKILLS GRID */}
         <div
           className="
             grid

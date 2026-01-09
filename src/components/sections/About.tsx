@@ -6,7 +6,6 @@ import star from "../../assets/star.png";
 export default function About() {
   return (
     <section id="About" className="mt-30 h-auto w-full overflow-x-hidden">
-      {/* GRID WRAPPER */}
       <div
         className="
           relative
@@ -21,7 +20,6 @@ export default function About() {
           lg:px-0
         "
       >
-        {/* ABOUT ME */}
         <div className="relative flex flex-col gap-3">
           <h1 className="text-left text-4xl md:text-5xl lg:text-6xl">
             About Me
@@ -34,16 +32,12 @@ export default function About() {
             one iteration at a time. Debugging is rarely enjoyable—but always
             necessary.
           </p>
-
-          {/* Decorative arrow — desktop only */}
           <img
             src={arrow}
             alt="arrow"
             className="hidden lg:block w-70 opacity-20 pt-15"
           />
         </div>
-
-        {/* CARD */}
         <div className="flex items-start justify-center">
           <div
             className="
@@ -68,7 +62,6 @@ export default function About() {
               lg:justify-end
             "
           >
-            {/* TEXT */}
             <div className="flex flex-col gap-3 w-full">
               <img
                 src={global}
@@ -85,8 +78,6 @@ export default function About() {
                 applications, from user interfaces to backend logic
               </p>
             </div>
-
-            {/* IMAGE */}
             <img
               src={uday}
               alt=""
@@ -107,8 +98,6 @@ export default function About() {
             />
           </div>
         </div>
-
-        {/* ENGINEER'S WAY */}
         <div className="relative flex flex-col items-start justify-end pb-20 lg:pb-35">
           <h1 className="text-5xl md:text-6xl lg:text-7xl">The</h1>
 

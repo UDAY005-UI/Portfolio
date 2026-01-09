@@ -36,29 +36,18 @@ export default function Navbar() {
   const handleScrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
+
     section.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
 
   return (
     <nav
-      className={`
-        fixed top-0 left-0 z-50 w-full px-5
-        bg-white/80 backdrop-blur-md
-        transition-transform duration-700 ease-in-out
-        ${show ? "translate-y-0" : "-translate-y-full"}
-      `}
+      className={`fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md transition-transform duration-700 ease-in-out ${show ? "translate-y-0" : "-translate-y-full"} `}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-start px-6 lg:px-12">
-        {/* Logo */}
-        <img
-          src={logo}
-          alt="Logo"
-          className="h-8 w-auto object-contain lg:-translate-x-12"
-        />
-
-        {/* Desktop / Tablet Menu */}
-        <ul className="hidden md:flex items-center gap-6 lg:gap-12 text-md lg:text-lg">
+      <div className="flex h-20 items-center gap-16 px-6 lg:px-12">
+        <img src={logo} alt="Logo" className="h-8 w-auto object-contain" />
+        <ul className="text-md hidden items-center gap-6 md:flex lg:gap-12 lg:text-lg">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -78,27 +67,18 @@ export default function Navbar() {
             Resume
           </a>
         </ul>
-
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-xl"
+          className="ml-auto text-xl md:hidden"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle Menu"
         >
           ☰
         </button>
       </div>
-
-      {/* Mobile Menu */}
       <div
-        className={`
-          md:hidden
-          overflow-hidden
-          transition-all duration-500 ease-in-out
-          ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-        `}
+        className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} `}
       >
-        <ul className="flex flex-col gap-6 px-6 pb-6 pt-4 text-base">
+        <ul className="flex flex-col gap-6 px-6 pt-4 pb-6 text-base">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

@@ -20,7 +20,6 @@ export default function Home() {
           lg:pl-[6vw]
         "
       >
-        {/* Decorative Background Image (lg only) */}
         <img
           src={web}
           alt=""
@@ -36,8 +35,6 @@ export default function Home() {
             -translate-x-11
           "
         />
-
-        {/* TEXT CONTENT */}
         <div className="relative z-10 flex flex-col pt-24 md:pt-32 lg:translate-x-10">
           <div className="flex flex-col gap-6 md:flex-row md:gap-16">
             <div>
@@ -81,8 +78,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-        {/* PROFILE IMAGE */}
         <div className="relative flex items-end justify-center md:justify-end lg:translate-x-20">
           <img
             src={uday}
